@@ -2,124 +2,55 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#173f35">
-<meta property="og:title" content="صدقة جارية ودعاء للمرحوم دكتور كمال فتحي أمين">
-<meta property="og:description" content="اللهم اغفر له وارحمه، وأسكنه فسيح جناتك">
-<title>دعاء للمرحوم دكتور كمال فتحي أمين</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>استغفار للمرحوم دكتور كمال فتحي أمين</title>
 <style>
-  *{box-sizing:border-box}
-  body{
-    margin:0; min-height:100vh; font-family:Tahoma,Arial,sans-serif;
-    background:linear-gradient(145deg,#eef6f1,#dcebe4);
-    color:#17352d; display:flex; justify-content:center; align-items:center;
-    padding:22px;
-  }
-  .card{
-    width:min(520px,100%); background:#fff; border-radius:26px;
-    overflow:hidden; box-shadow:0 18px 50px rgba(23,63,53,.18);
-    text-align:center;
-  }
-  .top{padding:26px 22px 10px}
-  .title{font-size:22px;font-weight:700;margin:0 0 7px}
-  .subtitle{font-size:14px;color:#6b7d76;margin:0}
-  .photo-wrap{padding:18px 22px 0}
-  .photo{width:100%;max-height:600px;object-fit:cover;border-radius:20px;display:block}
-  .name{font-size:24px;font-weight:800;margin:18px 12px 8px}
-  .dua{
-    margin:0 24px 20px; padding:17px 15px; border-radius:18px;
-    background:#f2f8f5; color:#24564a; font-size:20px; line-height:1.8;
-  }
-  .count-label{font-size:14px;color:#71847d}
-  .count{font-size:42px;font-weight:900;margin:2px 0 14px;color:#173f35}
-  button{
-    width:calc(100% - 44px); border:0; border-radius:17px; padding:17px 14px;
-    background:#173f35; color:white; font-size:19px; font-weight:700;
-    cursor:pointer; box-shadow:0 8px 18px rgba(23,63,53,.2);
-  }
-  button:active{transform:scale(.98)}
-  button:disabled{opacity:.65;cursor:wait}
-  .share{
-    background:#e8f1ed;color:#173f35;box-shadow:none;margin-top:10px;
-    font-size:16px;padding:13px;
-  }
-  .note{font-size:12px;color:#87948f;padding:18px 20px 22px;line-height:1.7}
-  .ok{min-height:20px;font-size:13px;color:#3e7565;margin-top:8px}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(160deg,#eef7f3,#f8fbfa);color:#17352d;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.card{width:min(92%,520px);background:#fff;border-radius:24px;padding:32px 22px;text-align:center;box-shadow:0 10px 35px #0002}
+h1{font-size:27px;margin:8px 0 18px}
+.dua{font-size:21px;line-height:1.9;margin:18px 0 24px}
+button{border:0;border-radius:18px;padding:17px 24px;font-size:19px;background:#198754;color:white;cursor:pointer;box-shadow:0 6px 18px #19875455}
+button:disabled{opacity:.6}
+.count{margin-top:20px;font-size:19px}
+.num{font-size:36px;font-weight:bold;display:block;margin-top:6px}
+.small{margin-top:22px;color:#66756f;font-size:14px}
+.status{font-size:13px;color:#777;margin-top:10px;min-height:18px}
 </style>
 </head>
 <body>
 <main class="card">
-  <section class="top">
-    <h1 class="title">صدقة جارية ودعاء</h1>
-    <p class="subtitle">نسأل الله له الرحمة والمغفرة</p>
-  </section>
-
-  <div class="photo-wrap">
-    <img class="photo" src="kamal.jpg" alt="دكتور كمال فتحي أمين">
-  </div>
-
-  <h2 class="name">دكتور كمال فتحي أمين</h2>
-
-  <div class="dua">اللهم اغفر له وارحمه، وأسكنه فسيح جناتك 🤲</div>
-
-  <div class="count-label">إجمالي مرات الدعاء</div>
-  <div class="count" id="count">—</div>
-
-  <button id="pray">اللهم اغفر له وارحمه، وأسكنه فسيح جناتك</button>
-  <div class="ok" id="status"></div>
-  <button class="share" id="share">مشاركة الرابط</button>
-
-  <div class="note">
-    كل ضغطة على الزر تضيف مرة واحدة إلى العداد العام وتظهر للجميع.
-  </div>
+<div style="font-size:44px">🤲</div>
+<h1>استغفار للمرحوم<br>دكتور كمال فتحي أمين</h1>
+<div class="dua">اللهم أغفر له و ارحمه واسكنه فسيح جناتك</div>
+<button id="btn">اللهم أغفر له و ارحمه واسكنه فسيح جناتك</button>
+<div class="count">عدد الاستغفارات الجماعي<span class="num" id="count">—</span></div>
+<div class="status" id="status"></div>
+<div class="small">صدقة جارية • شارك الرابط ليشارك غيرك في الدعاء له</div>
 </main>
-
 <script>
-const NAMESPACE = "kamal-fathy-amin-2026-memorial-7f3c91";
-const KEY = "dua";
-const BASE = "https://abacus.jasoncameron.dev";
-const countEl = document.getElementById("count");
-const btn = document.getElementById("pray");
-const statusEl = document.getElementById("status");
-
-function fmt(n){ return Number(n).toLocaleString("ar-EG"); }
-
+const URL="https://ndqoiukxnmrxzxbsvtbu.supabase.co", KEY="sb_publishable_JqGdmqWSykO1lu9z_vj-Jw_R2-Tyg4E";
+const headers={"apikey":KEY,"Authorization":"Bearer "+KEY,"Content-Type":"application/json"};
+function showCount(n){document.getElementById("count").textContent=Number(n).toLocaleString("ar-EG");}
 async function loadCount(){
   try{
-    const r = await fetch(`${BASE}/get/${NAMESPACE}/${KEY}`, {cache:"no-store"});
+    const r=await fetch(URL+"/rest/v1/istighfar?id=eq.1&select=count",{headers});
     if(!r.ok) throw new Error();
-    const data = await r.json();
-    countEl.textContent = fmt(data.value ?? 0);
-  }catch(e){
-    countEl.textContent = "—";
-    statusEl.textContent = "تعذر تحميل العداد الآن، حاول مرة أخرى.";
-  }
+    const d=await r.json();
+    showCount(d[0]?.count ?? 0);
+  }catch(e){document.getElementById("status").textContent="تعذر تحميل العداد، حاول تحديث الصفحة.";}
 }
-
-btn.addEventListener("click", async ()=>{
-  btn.disabled = true;
-  statusEl.textContent = "جاري تسجيل الدعاء…";
+async function increment(){
+  const b=document.getElementById("btn");
+  b.disabled=true;
   try{
-    const r = await fetch(`${BASE}/hit/${NAMESPACE}/${KEY}`, {cache:"no-store"});
+    const r=await fetch(URL+"/rest/v1/rpc/increment_istighfar",{method:"POST",headers,body:"{}"});
     if(!r.ok) throw new Error();
-    const data = await r.json();
-    countEl.textContent = fmt(data.value ?? 0);
-    statusEl.textContent = "جزاك الله خيرًا 🤲";
-  }catch(e){
-    statusEl.textContent = "لم يتم التسجيل. حاول مرة أخرى.";
-  }finally{
-    btn.disabled = false;
-  }
-});
-
-document.getElementById("share").addEventListener("click", async ()=>{
-  const data = {title: document.title, text:"دعاء للمرحوم دكتور كمال فتحي أمين 🤲", url:location.href};
-  try{
-    if(navigator.share) await navigator.share(data);
-    else { await navigator.clipboard.writeText(location.href); statusEl.textContent="تم نسخ الرابط."; }
-  }catch(e){}
-});
-
+    showCount(await r.json());
+    document.getElementById("status").textContent="تم تسجيل الاستغفار 🤲";
+  }catch(e){document.getElementById("status").textContent="لم يتم التسجيل، حاول مرة أخرى.";}
+  finally{b.disabled=false;}
+}
+document.getElementById("btn").addEventListener("click",increment);
 loadCount();
 </script>
 </body>
