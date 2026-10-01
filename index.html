@@ -516,13 +516,60 @@ document
   .addEventListener("click",increment);
 
 
-/* عداد الزوار */
+/* عداد الزوار الفريد */
 
 async function registerVisitor(){
 
+  const visitorKey = "kamal_visitor_registered";
+
+
+  /*
+    لو الجهاز/المتصفح اتسجل قبل كده
+    لا نزود العداد مرة أخرى
+  */
+
+  if(localStorage.getItem(visitorKey) === "1"){
+
+    try{
+
+      const r = await fetch(
+
+        URL+"/rest/v1/site_stats?id=eq.1&select=visitors",
+
+        {headers}
+
+      );
+
+
+      if(!r.ok) throw new Error();
+
+
+      const d = await r.json();
+
+
+      document.getElementById("visitors").textContent =
+        Number(d[0]?.visitors ?? 0).toLocaleString("ar-EG");
+
+
+    }catch(e){
+
+      document.getElementById("visitors").textContent = "—";
+
+    }
+
+
+    return;
+
+  }
+
+
+  /*
+    زائر جديد
+  */
+
   try{
 
-    const r=await fetch(
+    const r = await fetch(
 
       URL+"/rest/v1/rpc/increment_visitors",
 
@@ -542,17 +589,24 @@ async function registerVisitor(){
     if(!r.ok) throw new Error();
 
 
-    const total=await r.json();
+    const total = await r.json();
 
 
     document.getElementById("visitors").textContent =
       Number(total).toLocaleString("ar-EG");
 
 
+    /*
+      حفظ أن هذا الجهاز/المتصفح
+      تم تسجيله بالفعل
+    */
+
+    localStorage.setItem(visitorKey,"1");
+
+
   }catch(e){
 
-    document.getElementById("visitors").textContent =
-      "—";
+    document.getElementById("visitors").textContent = "—";
 
   }
 
