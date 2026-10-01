@@ -29,22 +29,45 @@ body{
   width:min(100%,520px);
   background:rgba(255,255,255,.97);
   border-radius:30px;
-  padding:30px 20px 24px;
+  padding:24px 20px 24px;
   text-align:center;
   box-shadow:0 15px 45px rgba(23,80,60,.14);
   border:1px solid rgba(23,107,82,.08);
 }
 
+/* صورة الدكتور */
+
+.photo{
+  width:190px;
+  height:190px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  overflow:hidden;
+  border:6px solid #e4f4ed;
+  box-shadow:
+    0 8px 25px rgba(23,80,60,.18),
+    0 0 0 2px rgba(25,135,84,.08);
+  background:#f4faf7;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center top;
+}
+
 .icon{
-  width:78px;
-  height:78px;
-  margin:0 auto 12px;
+  width:64px;
+  height:64px;
+  margin:0 auto 10px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#e4f4ed;
-  font-size:42px;
+  font-size:34px;
 }
 
 h1{
@@ -156,13 +179,31 @@ button{
   padding-top:16px;
   border-top:1px solid #edf1ef;
   font-size:12px;
-  color:#9a a39f;
+  color:#9aa39f;
 }
 
 @media(max-width:380px){
-  h1{font-size:23px}
-  .dua{font-size:19px}
-  #btn{font-size:16px}
+
+  .card{
+    padding:20px 15px 22px;
+  }
+
+  .photo{
+    width:165px;
+    height:165px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .dua{
+    font-size:19px;
+  }
+
+  #btn{
+    font-size:16px;
+  }
 }
 </style>
 </head>
@@ -170,6 +211,11 @@ button{
 <body>
 
 <main class="card">
+
+  <!-- صورة الدكتور -->
+  <div class="photo">
+    <img src="kamal.jpg" alt="الدكتور كمال فتحي أمين">
+  </div>
 
   <div class="icon">🤲</div>
 
