@@ -25,8 +25,7 @@ content="https://mfa41625-mo.github.io/dua-for-kamal/">
 <meta property="og:image"
 content="https://mfa41625-mo.github.io/dua-for-kamal/kamal.jpg">
 
-<meta name="twitter:card"
-content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">
 
 <meta name="twitter:title"
 content="صدقة جارية للمرحوم دكتور كمال فتحي أمين">
@@ -200,6 +199,32 @@ button{
 }
 
 
+/* عداد الزوار */
+
+.visitors-box{
+  margin-top:14px;
+  background:#f4faf7;
+  border:1px solid #dceee6;
+  border-radius:20px;
+  padding:14px 16px;
+}
+
+
+.visitors-title{
+  font-size:16px;
+  color:#687872;
+}
+
+
+.visitors-num{
+  display:block;
+  margin-top:4px;
+  font-size:34px;
+  font-weight:bold;
+  color:#176b52;
+}
+
+
 .status{
   font-size:14px;
   color:#198754;
@@ -310,6 +335,8 @@ button{
   </button>
 
 
+  <!-- عداد الدعوات -->
+
   <div class="count-box">
 
     <div class="count-title">
@@ -317,6 +344,21 @@ button{
     </div>
 
     <span class="num" id="count">
+      —
+    </span>
+
+  </div>
+
+
+  <!-- عداد الزوار -->
+
+  <div class="visitors-box">
+
+    <div class="visitors-title">
+      👥 عدد زوار الموقع
+    </div>
+
+    <span class="visitors-num" id="visitors">
       —
     </span>
 
@@ -364,6 +406,8 @@ const headers={
 };
 
 
+/* عرض عداد الدعاء */
+
 function showCount(n){
 
   document.getElementById("count").textContent =
@@ -371,6 +415,8 @@ function showCount(n){
 
 }
 
+
+/* تحميل عداد الدعاء */
 
 async function loadCount(){
 
@@ -403,6 +449,8 @@ async function loadCount(){
 
 }
 
+
+/* تسجيل الدعاء */
 
 async function increment(){
 
@@ -460,6 +508,48 @@ document
   .addEventListener("click",increment);
 
 
+/* عداد الزوار */
+
+async function registerVisitor(){
+
+  try{
+
+    const r=await fetch(
+
+      URL+"/rest/v1/rpc/increment_visitors",
+
+      {
+
+        method:"POST",
+
+        headers,
+
+        body:"{}"
+
+      }
+
+    );
+
+
+    if(!r.ok) throw new Error();
+
+
+    const total=await r.json();
+
+
+    document.getElementById("visitors").textContent =
+      Number(total).toLocaleString("ar-EG");
+
+
+  }catch(e){
+
+    document.getElementById("visitors").textContent =
+      "—";
+
+  }
+
+}
+
 
 /* مشاركة الموقع */
 
@@ -506,11 +596,14 @@ document
 
     }catch(e){}
 
-
   });
 
 
+/* تشغيل العدادات */
+
 loadCount();
+
+registerVisitor();
 
 </script>
 
