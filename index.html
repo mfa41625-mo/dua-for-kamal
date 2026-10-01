@@ -175,6 +175,8 @@ button{
 }
 
 
+/* عداد الدعوات */
+
 .count-box{
   margin-top:22px;
   background:#fff;
@@ -199,27 +201,33 @@ button{
 }
 
 
-/* عداد الزوار */
+/* عداد الزوار الصغير */
 
 .visitors-box{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
   margin-top:14px;
+  padding:8px 14px;
   background:#f4faf7;
   border:1px solid #dceee6;
-  border-radius:20px;
-  padding:14px 16px;
+  border-radius:14px;
+  color:#176b52;
+  font-size:14px;
 }
 
 
 .visitors-title{
-  font-size:16px;
+  font-size:14px;
   color:#687872;
 }
 
 
 .visitors-num{
-  display:block;
-  margin-top:4px;
-  font-size:34px;
+  display:inline;
+  margin:0;
+  font-size:17px;
   font-weight:bold;
   color:#176b52;
 }
@@ -354,9 +362,9 @@ button{
 
   <div class="visitors-box">
 
-    <div class="visitors-title">
-      👥 عدد زوار الموقع
-    </div>
+    <span class="visitors-title">
+      👥 الزوار
+    </span>
 
     <span class="visitors-num" id="visitors">
       —
@@ -574,25 +582,20 @@ document
 
     try{
 
-
       if(navigator.share){
 
         await navigator.share(shareData);
 
-
       }else{
-
 
         await navigator.clipboard.writeText(
           "https://mfa41625-mo.github.io/dua-for-kamal/"
         );
 
-
         document.getElementById("status").textContent =
           "تم نسخ رابط الموقع، شاركه مع من تحب 🤲";
 
       }
-
 
     }catch(e){}
 
