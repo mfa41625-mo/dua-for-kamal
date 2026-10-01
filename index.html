@@ -3,55 +3,340 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>استغفار للمرحوم دكتور كمال فتحي أمين</title>
+<meta name="theme-color" content="#176b52">
+
+<title>صدقة جارية للمرحوم دكتور كمال فتحي أمين</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(160deg,#eef7f3,#f8fbfa);color:#17352d;display:flex;min-height:100vh;align-items:center;justify-content:center}
-.card{width:min(92%,520px);background:#fff;border-radius:24px;padding:32px 22px;text-align:center;box-shadow:0 10px 35px #0002}
-h1{font-size:27px;margin:8px 0 18px}
-.dua{font-size:21px;line-height:1.9;margin:18px 0 24px}
-button{border:0;border-radius:18px;padding:17px 24px;font-size:19px;background:#198754;color:white;cursor:pointer;box-shadow:0 6px 18px #19875455}
-button:disabled{opacity:.6}
-.count{margin-top:20px;font-size:19px}
-.num{font-size:36px;font-weight:bold;display:block;margin-top:6px}
-.small{margin-top:22px;color:#66756f;font-size:14px}
-.status{font-size:13px;color:#777;margin-top:10px;min-height:18px}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:
+    radial-gradient(circle at top,#e8f7f0 0,#f6fbf8 45%,#edf5f1 100%);
+  color:#17352d;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.card{
+  width:min(100%,520px);
+  background:rgba(255,255,255,.97);
+  border-radius:30px;
+  padding:30px 20px 24px;
+  text-align:center;
+  box-shadow:0 15px 45px rgba(23,80,60,.14);
+  border:1px solid rgba(23,107,82,.08);
+}
+
+.icon{
+  width:78px;
+  height:78px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e4f4ed;
+  font-size:42px;
+}
+
+h1{
+  font-size:26px;
+  line-height:1.6;
+  margin:8px 0 4px;
+  color:#145b46;
+}
+
+.subtitle{
+  font-size:15px;
+  color:#71817b;
+  margin-bottom:22px;
+}
+
+.line{
+  width:65px;
+  height:3px;
+  background:#198754;
+  border-radius:10px;
+  margin:0 auto 20px;
+}
+
+.dua-box{
+  background:#f4faf7;
+  border:1px solid #dceee6;
+  border-radius:20px;
+  padding:18px 14px;
+  margin-bottom:22px;
+}
+
+.dua{
+  font-size:21px;
+  line-height:2;
+  font-weight:bold;
+  color:#21483d;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:18px;
+  padding:17px 14px;
+  font-size:18px;
+  font-weight:bold;
+  font-family:inherit;
+  cursor:pointer;
+  transition:.2s;
+}
+
+#btn{
+  background:linear-gradient(135deg,#198754,#146c50);
+  color:white;
+  box-shadow:0 8px 20px rgba(25,135,84,.25);
+}
+
+#btn:active{
+  transform:scale(.98);
+}
+
+#btn:disabled{
+  opacity:.65;
+}
+
+.count-box{
+  margin-top:22px;
+  background:#fff;
+  border:1px solid #e3eee9;
+  border-radius:20px;
+  padding:16px;
+}
+
+.count-title{
+  font-size:16px;
+  color:#687872;
+}
+
+.num{
+  display:block;
+  margin-top:5px;
+  font-size:42px;
+  font-weight:bold;
+  color:#198754;
+}
+
+.status{
+  font-size:14px;
+  color:#198754;
+  min-height:20px;
+  margin-top:10px;
+}
+
+.share{
+  margin-top:16px;
+  background:#edf7f3;
+  color:#176b52;
+  border:1px solid #d7ebe3;
+}
+
+.small{
+  margin-top:20px;
+  color:#7a8782;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.footer{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid #edf1ef;
+  font-size:12px;
+  color:#9a a39f;
+}
+
+@media(max-width:380px){
+  h1{font-size:23px}
+  .dua{font-size:19px}
+  #btn{font-size:16px}
+}
 </style>
 </head>
+
 <body>
+
 <main class="card">
-<div style="font-size:44px">🤲</div>
-<h1>استغفار للمرحوم<br>دكتور كمال فتحي أمين</h1>
-<div class="dua">اللهم أغفر له و ارحمه واسكنه فسيح جناتك</div>
-<button id="btn">اللهم أغفر له و ارحمه واسكنه فسيح جناتك</button>
-<div class="count">عدد الاستغفارات الجماعي<span class="num" id="count">—</span></div>
-<div class="status" id="status"></div>
-<div class="small">صدقة جارية • شارك الرابط ليشارك غيرك في الدعاء له</div>
+
+  <div class="icon">🤲</div>
+
+  <h1>
+    صدقة جارية للمرحوم<br>
+    دكتور كمال فتحي أمين
+  </h1>
+
+  <div class="subtitle">
+    نسأل الله أن يجعلها نورًا ورحمةً له
+  </div>
+
+  <div class="line"></div>
+
+  <div class="dua-box">
+    <div class="dua">
+      اللهم اغفر له وارحمه<br>
+      وأسكنه فسيح جناتك
+    </div>
+  </div>
+
+  <button id="btn">
+    🤲 اضغط للدعاء له
+  </button>
+
+  <div class="count-box">
+    <div class="count-title">
+      عدد الدعوات والاستغفارات الجماعية
+    </div>
+
+    <span class="num" id="count">—</span>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <button class="share" id="shareBtn">
+    📤 شارك الصدقة الجارية
+  </button>
+
+  <div class="small">
+    كل ضغطة دعاء تُضاف إلى العداد الجماعي<br>
+    شارك الرابط مع غيرك ليشاركوا في الدعاء له
+  </div>
+
+  <div class="footer">
+    صدقة جارية • اللهم اجعلها في ميزان حسناته
+  </div>
+
 </main>
+
 <script>
-const URL="https://ndqoiukxnmrxzxbsvtbu.supabase.co", KEY="sb_publishable_JqGdmqWSykO1lu9z_vj-Jw_R2-Tyg4E";
-const headers={"apikey":KEY,"Authorization":"Bearer "+KEY,"Content-Type":"application/json"};
-function showCount(n){document.getElementById("count").textContent=Number(n).toLocaleString("ar-EG");}
+
+const URL="https://ndqoiukxnmrxzxbsvtbu.supabase.co";
+const KEY="sb_publishable_JqGdmqWSykO1lu9z_vj-Jw_R2-Tyg4E";
+
+const headers={
+  "apikey":KEY,
+  "Authorization":"Bearer "+KEY,
+  "Content-Type":"application/json"
+};
+
+function showCount(n){
+  document.getElementById("count").textContent =
+    Number(n).toLocaleString("ar-EG");
+}
+
 async function loadCount(){
+
   try{
-    const r=await fetch(URL+"/rest/v1/istighfar?id=eq.1&select=count",{headers});
+
+    const r=await fetch(
+      URL+"/rest/v1/istighfar?id=eq.1&select=count",
+      {headers}
+    );
+
     if(!r.ok) throw new Error();
+
     const d=await r.json();
+
     showCount(d[0]?.count ?? 0);
-  }catch(e){document.getElementById("status").textContent="تعذر تحميل العداد، حاول تحديث الصفحة.";}
+
+  }catch(e){
+
+    document.getElementById("status").textContent =
+      "تعذر تحميل العداد، حاول تحديث الصفحة.";
+
+  }
+
 }
+
 async function increment(){
+
   const b=document.getElementById("btn");
+
   b.disabled=true;
+
   try{
-    const r=await fetch(URL+"/rest/v1/rpc/increment_istighfar",{method:"POST",headers,body:"{}"});
+
+    const r=await fetch(
+      URL+"/rest/v1/rpc/increment_istighfar",
+      {
+        method:"POST",
+        headers,
+        body:"{}"
+      }
+    );
+
     if(!r.ok) throw new Error();
+
     showCount(await r.json());
-    document.getElementById("status").textContent="تم تسجيل الاستغفار 🤲";
-  }catch(e){document.getElementById("status").textContent="لم يتم التسجيل، حاول مرة أخرى.";}
-  finally{b.disabled=false;}
+
+    document.getElementById("status").textContent =
+      "تم تسجيل الدعاء 🤲 جزاك الله خيرًا";
+
+  }catch(e){
+
+    document.getElementById("status").textContent =
+      "لم يتم التسجيل، حاول مرة أخرى.";
+
+  }finally{
+
+    b.disabled=false;
+
+  }
+
 }
-document.getElementById("btn").addEventListener("click",increment);
+
+document
+  .getElementById("btn")
+  .addEventListener("click",increment);
+
+
+/* مشاركة الموقع */
+
+document
+  .getElementById("shareBtn")
+  .addEventListener("click",async()=>{
+
+    const shareData={
+      title:"صدقة جارية للمرحوم دكتور كمال فتحي أمين",
+      text:"شارك في الدعاء للمرحوم دكتور كمال فتحي أمين 🤲",
+      url:window.location.href
+    };
+
+    try{
+
+      if(navigator.share){
+
+        await navigator.share(shareData);
+
+      }else{
+
+        await navigator.clipboard.writeText(window.location.href);
+
+        document.getElementById("status").textContent =
+          "تم نسخ رابط الموقع، شاركه مع من تحب 🤲";
+
+      }
+
+    }catch(e){}
+
+  });
+
+
 loadCount();
+
 </script>
+
 </body>
 </html>
