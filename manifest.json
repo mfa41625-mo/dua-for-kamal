@@ -1,0 +1,24 @@
+{
+  "name": "صدقة جارية للمرحوم دكتور كمال فتحي أمين",
+  "short_name": "صدقة جارية",
+  "description": "صدقة جارية ودعاء للمرحوم دكتور كمال فتحي أمين",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6fbf8",
+  "theme_color": "#176b52",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
