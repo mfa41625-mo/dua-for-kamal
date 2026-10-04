@@ -9,36 +9,11 @@
 <title>صدقة جارية للمرحوم دكتور كمال فتحي أمين</title>
 
 <meta name="description"
-content="صدقة جارية للمرحوم دكتور كمال فتحي أمين 🤲 شارك في الدعاء له">
-
-<meta property="og:title"
 content="صدقة جارية للمرحوم دكتور كمال فتحي أمين">
 
-<meta property="og:description"
-content="شارك في الدعاء للمرحوم دكتور كمال فتحي أمين 🤲">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url"
-content="https://mfa41625-mo.github.io/dua-for-kamal/">
-
-<meta property="og:image"
-content="https://mfa41625-mo.github.io/dua-for-kamal/kamal.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title"
-content="صدقة جارية للمرحوم دكتور كمال فتحي أمين">
-
-<meta name="twitter:description"
-content="شارك في الدعاء للمرحوم دكتور كمال فتحي أمين 🤲">
-
-<meta name="twitter:image"
-content="https://mfa41625-mo.github.io/dua-for-kamal/kamal.jpg">
-
+<link rel="manifest" href="manifest.json">
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -46,621 +21,329 @@ content="https://mfa41625-mo.github.io/dua-for-kamal/kamal.jpg">
 body{
   margin:0;
   font-family:Arial,Tahoma,sans-serif;
-  background:
-    radial-gradient(circle at top,#e8f7f0 0,#f6fbf8 45%,#edf5f1 100%);
+  background:linear-gradient(160deg,#e8f7f0,#f6fbf8,#edf5f1);
   color:#17352d;
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding:18px;
+  align-items:center;
+  padding:20px;
 }
 
 .card{
   width:min(100%,520px);
-  background:rgba(255,255,255,.97);
+  background:#fff;
   border-radius:30px;
-  padding:24px 20px 24px;
-  text-align:center;
+  padding:25px 20px;
   box-shadow:0 15px 45px rgba(23,80,60,.14);
-  border:1px solid rgba(23,107,82,.08);
+  text-align:center;
 }
-
-
-/* صورة الدكتور */
-
-.photo{
-  width:190px;
-  height:190px;
-  margin:0 auto 18px;
-  border-radius:50%;
-  overflow:hidden;
-  border:6px solid #e4f4ed;
-  box-shadow:
-    0 8px 25px rgba(23,80,60,.18),
-    0 0 0 2px rgba(25,135,84,.08);
-  background:#f4faf7;
-}
-
-.photo img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center top;
-}
-
-
-.icon{
-  width:64px;
-  height:64px;
-  margin:0 auto 10px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#e4f4ed;
-  font-size:34px;
-}
-
 
 h1{
-  font-size:26px;
+  font-size:25px;
+  margin:5px 0 20px;
+  color:#176b52;
   line-height:1.6;
-  margin:8px 0 4px;
-  color:#145b46;
 }
 
-
-.subtitle{
-  font-size:15px;
-  color:#71817b;
-  margin-bottom:22px;
-}
-
-
-.line{
-  width:65px;
-  height:3px;
-  background:#198754;
-  border-radius:10px;
+.photo{
+  width:100%;
+  max-width:360px;
+  height:auto;
+  border-radius:20px;
+  display:block;
   margin:0 auto 20px;
 }
 
-
-.dua-box{
-  background:#f4faf7;
-  border:1px solid #dceee6;
-  border-radius:20px;
-  padding:18px 14px;
-  margin-bottom:22px;
-}
-
-
 .dua{
-  font-size:21px;
-  line-height:2;
+  font-size:24px;
+  line-height:1.9;
   font-weight:bold;
-  color:#21483d;
+  margin:20px 0;
 }
 
+.counter{
+  font-size:18px;
+  margin:20px 0;
+  color:#176b52;
+}
 
 button{
-  width:100%;
   border:0;
-  border-radius:18px;
-  padding:17px 14px;
-  font-size:18px;
+  background:#198754;
+  color:white;
+  font-size:21px;
   font-weight:bold;
-  font-family:inherit;
+  padding:15px 25px;
+  border-radius:15px;
   cursor:pointer;
+  width:100%;
   transition:.2s;
 }
 
-
-#btn{
-  background:linear-gradient(135deg,#198754,#146c50);
-  color:white;
-  box-shadow:0 8px 20px rgba(25,135,84,.25);
+button:active{
+  transform:scale(.97);
 }
 
-
-#btn:active{
-  transform:scale(.98);
-}
-
-
-#btn:disabled{
-  opacity:.65;
-}
-
-
-/* عداد الدعوات */
-
-.count-box{
-  margin-top:22px;
-  background:#fff;
-  border:1px solid #e3eee9;
-  border-radius:20px;
-  padding:16px;
-}
-
-
-.count-title{
-  font-size:16px;
-  color:#687872;
-}
-
-
-.num{
-  display:block;
-  margin-top:5px;
-  font-size:42px;
-  font-weight:bold;
-  color:#198754;
-}
-
-
-/* عداد الزوار الصغير */
-
-.visitors-box{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:14px;
-  padding:8px 14px;
-  background:#f4faf7;
-  border:1px solid #dceee6;
-  border-radius:14px;
+.visitors{
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  background:#ffffffdd;
+  border:1px solid #d7ebe2;
+  border-radius:12px;
+  padding:6px 10px;
+  font-size:12px;
   color:#176b52;
-  font-size:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
-
-
-.visitors-title{
-  font-size:14px;
-  color:#687872;
-}
-
-
-.visitors-num{
-  display:inline;
-  margin:0;
-  font-size:17px;
-  font-weight:bold;
-  color:#176b52;
-}
-
-
-.status{
-  font-size:14px;
-  color:#198754;
-  min-height:20px;
-  margin-top:10px;
-}
-
-
-.share{
-  margin-top:16px;
-  background:#edf7f3;
-  color:#176b52;
-  border:1px solid #d7ebe3;
-}
-
-
-.small{
-  margin-top:20px;
-  color:#7a8782;
-  font-size:13px;
-  line-height:1.8;
-}
-
 
 .footer{
-  margin-top:18px;
-  padding-top:16px;
-  border-top:1px solid #edf1ef;
-  font-size:12px;
-  color:#9aa39f;
+  margin-top:20px;
+  font-size:13px;
+  color:#777;
 }
-
-
-@media(max-width:380px){
-
-  .card{
-    padding:20px 15px 22px;
-  }
-
-  .photo{
-    width:165px;
-    height:165px;
-  }
-
-  h1{
-    font-size:23px;
-  }
-
-  .dua{
-    font-size:19px;
-  }
-
-  #btn{
-    font-size:16px;
-  }
-
-}
-
 </style>
-</head>
 
+</head>
 
 <body>
 
-<main class="card">
-
-
-  <!-- صورة الدكتور -->
-
-  <div class="photo">
-    <img
-      src="kamal.jpg"
-      alt="الدكتور كمال فتحي أمين">
-  </div>
-
-
-  <div class="icon">
-    🤲
-  </div>
-
+<div class="card">
 
   <h1>
-    صدقة جارية للمرحوم<br>
-    دكتور كمال فتحي أمين
+    صدقة جارية<br>
+    للمرحوم دكتور كمال فتحي أمين
   </h1>
 
+  <!--
+  إذا كانت صورة المرحوم موجودة عندك باسم photo.jpg
+  ضعها في نفس مكان index.html
+  -->
+  <img
+    src="photo.jpg"
+    alt="دكتور كمال فتحي أمين"
+    class="photo"
+    onerror="this.style.display='none'"
+  >
 
-  <div class="subtitle">
-    نسأل الله أن يجعلها نورًا ورحمةً له
+  <div class="dua">
+    اللهم اغفر له وارحمه<br>
+    وأسكنه فسيح جناتك
   </div>
 
-
-  <div class="line"></div>
-
-
-  <div class="dua-box">
-
-    <div class="dua">
-      اللهم اغفر له وارحمه<br>
-      وأسكنه فسيح جناتك
-    </div>
-
+  <div class="counter">
+    عدد مرات الدعاء:
+    <strong id="count">0</strong>
   </div>
 
-
-  <button id="btn">
-    🤲 اضغط للدعاء له
+  <button onclick="addDua()">
+    🤲 اللهم اغفر له وارحمه
   </button>
-
-
-  <!-- عداد الدعوات -->
-
-  <div class="count-box">
-
-    <div class="count-title">
-      عدد الدعوات والاستغفارات الجماعية
-    </div>
-
-    <span class="num" id="count">
-      —
-    </span>
-
-  </div>
-
-
-  <!-- عداد الزوار -->
-
-  <div class="visitors-box">
-
-    <span class="visitors-title">
-      👥 الزوار
-    </span>
-
-    <span class="visitors-num" id="visitors">
-      —
-    </span>
-
-  </div>
-
-
-  <div class="status" id="status"></div>
-
-
-  <button class="share" id="shareBtn">
-    📤 شارك الصدقة الجارية
-  </button>
-
-
-  <div class="small">
-    كل ضغطة دعاء تُضاف إلى العداد الجماعي<br>
-    شارك الرابط مع غيرك ليشاركوا في الدعاء له
-  </div>
-
 
   <div class="footer">
-    صدقة جارية • اللهم اجعلها في ميزان حسناته
+    جزاكم الله خيرًا وجعلها صدقة جارية
   </div>
 
+</div>
 
-</main>
+<div class="visitors">
+  👥 الزوار: <strong id="visitors">0</strong>
+</div>
 
 
 <script>
 
+const SUPABASE_URL =
+"https://ndqoiukxnmrxzxbsvtbu.supabase.co";
 
-const URL="https://ndqoiukxnmrxzxbsvtbu.supabase.co";
-
-const KEY="sb_publishable_JqGdmqWSykO1lu9z_vj-Jw_R2-Tyg4E";
-
-
-const headers={
-
-  "apikey":KEY,
-
-  "Authorization":"Bearer "+KEY,
-
-  "Content-Type":"application/json"
-
-};
+const SUPABASE_ANON_KEY =
+"ضع_مفتاح_Supabase_الخاص_بك_هنا";
 
 
-/* عرض عداد الدعاء */
-
-function showCount(n){
-
-  document.getElementById("count").textContent =
-    Number(n).toLocaleString("ar-EG");
-
-}
-
-
-/* تحميل عداد الدعاء */
+/* =========================
+   عداد الدعاء
+========================= */
 
 async function loadCount(){
 
   try{
 
-    const r=await fetch(
-
-      URL+"/rest/v1/istighfar?id=eq.1&select=count",
-
-      {headers}
-
+    const response = await fetch(
+      SUPABASE_URL +
+      "/rest/v1/site_stats?id=eq.1&select=visitors",
+      {
+        headers:{
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer " + SUPABASE_ANON_KEY
+        }
+      }
     );
 
+    const data = await response.json();
 
-    if(!r.ok) throw new Error();
+    if(data.length){
+      document.getElementById("count").textContent =
+        data[0].visitors;
+    }
 
-
-    const d=await r.json();
-
-
-    showCount(d[0]?.count ?? 0);
-
-
-  }catch(e){
-
-    document.getElementById("status").textContent =
-      "تعذر تحميل العداد، حاول تحديث الصفحة.";
-
+  }catch(error){
+    console.log(error);
   }
 
 }
 
 
-/* تسجيل الدعاء */
-
-async function increment(){
-
-  const b=document.getElementById("btn");
-
-  b.disabled=true;
-
+async function addDua(){
 
   try{
 
-    const r=await fetch(
-
-      URL+"/rest/v1/rpc/increment_istighfar",
-
+    const response = await fetch(
+      SUPABASE_URL + "/rest/v1/rpc/increment_visitors",
       {
-
         method:"POST",
-
-        headers,
-
+        headers:{
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer " + SUPABASE_ANON_KEY,
+          "Content-Type":"application/json"
+        },
         body:"{}"
-
       }
-
     );
 
+    const data = await response.json();
 
-    if(!r.ok) throw new Error();
+    document.getElementById("count").textContent = data;
 
+  }catch(error){
 
-    showCount(await r.json());
-
-
-    document.getElementById("status").textContent =
-      "تم تسجيل الدعاء 🤲 جزاك الله خيرًا";
-
-
-  }catch(e){
-
-    document.getElementById("status").textContent =
-      "لم يتم التسجيل، حاول مرة أخرى.";
-
-
-  }finally{
-
-    b.disabled=false;
+    console.log(error);
 
   }
 
 }
 
 
-document
-  .getElementById("btn")
-  .addEventListener("click",increment);
+/* =========================
+   عداد الزوار
+   الزائر نفسه لا يتحسب
+   كل مرة يعمل Refresh
+========================= */
 
+async function countVisitor(){
 
-/* عداد الزوار الفريد */
+  const visitorKey = "kamal_memorial_visitor";
 
-async function registerVisitor(){
+  const alreadyVisited =
+    localStorage.getItem(visitorKey);
 
-  const visitorKey = "kamal_visitor_registered";
+  if(alreadyVisited){
 
-
-  /*
-    لو الجهاز/المتصفح اتسجل قبل كده
-    لا نزود العداد مرة أخرى
-  */
-
-  if(localStorage.getItem(visitorKey) === "1"){
-
-    try{
-
-      const r = await fetch(
-
-        URL+"/rest/v1/site_stats?id=eq.1&select=visitors",
-
-        {headers}
-
-      );
-
-
-      if(!r.ok) throw new Error();
-
-
-      const d = await r.json();
-
-
-      document.getElementById("visitors").textContent =
-        Number(d[0]?.visitors ?? 0).toLocaleString("ar-EG");
-
-
-    }catch(e){
-
-      document.getElementById("visitors").textContent = "—";
-
-    }
-
-
+    loadVisitorCount();
     return;
 
   }
 
-
-  /*
-    زائر جديد
-  */
+  localStorage.setItem(
+    visitorKey,
+    "1"
+  );
 
   try{
 
-    const r = await fetch(
-
-      URL+"/rest/v1/rpc/increment_visitors",
-
+    const response = await fetch(
+      SUPABASE_URL +
+      "/rest/v1/rpc/increment_site_visitor",
       {
-
         method:"POST",
-
-        headers,
-
+        headers:{
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer " + SUPABASE_ANON_KEY,
+          "Content-Type":"application/json"
+        },
         body:"{}"
-
       }
-
     );
 
-
-    if(!r.ok) throw new Error();
-
-
-    const total = await r.json();
-
+    const data = await response.json();
 
     document.getElementById("visitors").textContent =
-      Number(total).toLocaleString("ar-EG");
+      data;
 
+  }catch(error){
 
-    /*
-      حفظ أن هذا الجهاز/المتصفح
-      تم تسجيله بالفعل
-    */
-
-    localStorage.setItem(visitorKey,"1");
-
-
-  }catch(e){
-
-    document.getElementById("visitors").textContent = "—";
+    console.log(error);
+    loadVisitorCount();
 
   }
 
 }
 
 
-/* مشاركة الموقع */
+async function loadVisitorCount(){
 
-document
-  .getElementById("shareBtn")
-  .addEventListener("click",async()=>{
+  try{
 
-
-    const shareData={
-
-      title:
-        "صدقة جارية للمرحوم دكتور كمال فتحي أمين",
-
-      text:
-        "شارك في الدعاء للمرحوم دكتور كمال فتحي أمين 🤲",
-
-      url:
-        "https://mfa41625-mo.github.io/dua-for-kamal/"
-
-    };
-
-
-    try{
-
-      if(navigator.share){
-
-        await navigator.share(shareData);
-
-      }else{
-
-        await navigator.clipboard.writeText(
-          "https://mfa41625-mo.github.io/dua-for-kamal/"
-        );
-
-        document.getElementById("status").textContent =
-          "تم نسخ رابط الموقع، شاركه مع من تحب 🤲";
-
+    const response = await fetch(
+      SUPABASE_URL +
+      "/rest/v1/site_stats?id=eq.1&select=visitors",
+      {
+        headers:{
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer " + SUPABASE_ANON_KEY
+        }
       }
+    );
 
-    }catch(e){}
+    const data = await response.json();
+
+    if(data.length){
+
+      document.getElementById("visitors").textContent =
+        data[0].visitors;
+
+    }
+
+  }catch(error){
+
+    console.log(error);
+
+  }
+
+}
+
+
+/* =========================
+   تشغيل الموقع
+========================= */
+
+loadCount();
+countVisitor();
+
+
+/* =========================
+   تشغيل الموقع كتطبيق
+========================= */
+
+if("serviceWorker" in navigator){
+
+  window.addEventListener("load",function(){
+
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(function(){
+        console.log("Service Worker registered");
+      })
+      .catch(function(error){
+        console.log(
+          "Service Worker error:",
+          error
+        );
+      });
 
   });
 
-
-/* تشغيل العدادات */
-
-loadCount();
-
-registerVisitor();
+}
 
 </script>
 
