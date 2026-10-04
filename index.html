@@ -1,350 +1,63 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#176b52">
-
-<title>صدقة جارية للمرحوم دكتور كمال فتحي أمين</title>
-
-<meta name="description"
-content="صدقة جارية للمرحوم دكتور كمال فتحي أمين">
-
-<link rel="manifest" href="manifest.json">
-
-<style>
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:Arial,Tahoma,sans-serif;
-  background:linear-gradient(160deg,#e8f7f0,#f6fbf8,#edf5f1);
-  color:#17352d;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.card{
-  width:min(100%,520px);
-  background:#fff;
-  border-radius:30px;
-  padding:25px 20px;
-  box-shadow:0 15px 45px rgba(23,80,60,.14);
-  text-align:center;
-}
-
-h1{
-  font-size:25px;
-  margin:5px 0 20px;
-  color:#176b52;
-  line-height:1.6;
-}
-
-.photo{
-  width:100%;
-  max-width:360px;
-  height:auto;
-  border-radius:20px;
-  display:block;
-  margin:0 auto 20px;
-}
-
-.dua{
-  font-size:24px;
-  line-height:1.9;
-  font-weight:bold;
-  margin:20px 0;
-}
-
-.counter{
-  font-size:18px;
-  margin:20px 0;
-  color:#176b52;
-}
-
-button{
-  border:0;
-  background:#198754;
-  color:white;
-  font-size:21px;
-  font-weight:bold;
-  padding:15px 25px;
-  border-radius:15px;
-  cursor:pointer;
-  width:100%;
-  transition:.2s;
-}
-
-button:active{
-  transform:scale(.97);
-}
-
-.visitors{
-  position:fixed;
-  bottom:10px;
-  left:10px;
-  background:#ffffffdd;
-  border:1px solid #d7ebe2;
-  border-radius:12px;
-  padding:6px 10px;
-  font-size:12px;
-  color:#176b52;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.footer{
-  margin-top:20px;
-  font-size:13px;
-  color:#777;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="card">
-
-  <h1>
-    صدقة جارية<br>
-    للمرحوم دكتور كمال فتحي أمين
-  </h1>
-
-  <!--
-  إذا كانت صورة المرحوم موجودة عندك باسم photo.jpg
-  ضعها في نفس مكان index.html
-  -->
-  <img
-    src="photo.jpg"
-    alt="دكتور كمال فتحي أمين"
-    class="photo"
-    onerror="this.style.display='none'"
-  >
-
-  <div class="dua">
-    اللهم اغفر له وارحمه<br>
-    وأسكنه فسيح جناتك
-  </div>
-
-  <div class="counter">
-    عدد مرات الدعاء:
-    <strong id="count">0</strong>
-  </div>
-
-  <button onclick="addDua()">
-    🤲 اللهم اغفر له وارحمه
-  </button>
-
-  <div class="footer">
-    جزاكم الله خيرًا وجعلها صدقة جارية
-  </div>
-
-</div>
-
-<div class="visitors">
-  👥 الزوار: <strong id="visitors">0</strong>
-</div>
+localStorage.setItem(visitorKey,"1");
 
 
-<script>
+  }catch(e){
 
-const SUPABASE_URL =
-"https://ndqoiukxnmrxzxbsvtbu.supabase.co";
-
-const SUPABASE_ANON_KEY =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5kcW9pdWt4bm1yeHp4YnN2dGJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NjM4NTQsImV4cCI6MjEwNjMzOTg1NH0.t-VE60xia2qDWiGOCK5jhQTA56qN8pC8CWDN-Dq5GTs
-  ";
-
-
-/* =========================
-   عداد الدعاء
-========================= */
-
-async function loadCount(){
-
-  try{
-
-    const response = await fetch(
-      SUPABASE_URL +
-      "/rest/v1/site_stats?id=eq.1&select=visitors",
-      {
-        headers:{
-          "apikey":SUPABASE_ANON_KEY,
-          "Authorization":"Bearer " + SUPABASE_ANON_KEY
-        }
-      }
-    );
-
-    const data = await response.json();
-
-    if(data.length){
-      document.getElementById("count").textContent =
-        data[0].visitors;
-    }
-
-  }catch(error){
-    console.log(error);
-  }
-
-}
-
-
-async function addDua(){
-
-  try{
-
-    const response = await fetch(
-      SUPABASE_URL + "/rest/v1/rpc/increment_visitors",
-      {
-        method:"POST",
-        headers:{
-          "apikey":SUPABASE_ANON_KEY,
-          "Authorization":"Bearer " + SUPABASE_ANON_KEY,
-          "Content-Type":"application/json"
-        },
-        body:"{}"
-      }
-    );
-
-    const data = await response.json();
-
-    document.getElementById("count").textContent = data;
-
-  }catch(error){
-
-    console.log(error);
+    document.getElementById("visitors").textContent = "—";
 
   }
 
 }
 
 
-/* =========================
-   عداد الزوار
-   الزائر نفسه لا يتحسب
-   كل مرة يعمل Refresh
-========================= */
+/* مشاركة الموقع */
 
-async function countVisitor(){
-
-  const visitorKey = "kamal_memorial_visitor";
-
-  const alreadyVisited =
-    localStorage.getItem(visitorKey);
-
-  if(alreadyVisited){
-
-    loadVisitorCount();
-    return;
-
-  }
-
-  localStorage.setItem(
-    visitorKey,
-    "1"
-  );
-
-  try{
-
-    const response = await fetch(
-      SUPABASE_URL +
-      "/rest/v1/rpc/increment_site_visitor",
-      {
-        method:"POST",
-        headers:{
-          "apikey":SUPABASE_ANON_KEY,
-          "Authorization":"Bearer " + SUPABASE_ANON_KEY,
-          "Content-Type":"application/json"
-        },
-        body:"{}"
-      }
-    );
-
-    const data = await response.json();
-
-    document.getElementById("visitors").textContent =
-      data;
-
-  }catch(error){
-
-    console.log(error);
-    loadVisitorCount();
-
-  }
-
-}
+document
+  .getElementById("shareBtn")
+  .addEventListener("click",async()=>{
 
 
-async function loadVisitorCount(){
+    const shareData={
 
-  try{
+      title:
+        "صدقة جارية للمرحوم دكتور كمال فتحي أمين",
 
-    const response = await fetch(
-      SUPABASE_URL +
-      "/rest/v1/site_stats?id=eq.1&select=visitors",
-      {
-        headers:{
-          "apikey":SUPABASE_ANON_KEY,
-          "Authorization":"Bearer " + SUPABASE_ANON_KEY
-        }
-      }
-    );
+      text:
+        "شارك في الدعاء للمرحوم دكتور كمال فتحي أمين 🤲",
 
-    const data = await response.json();
+      url:
+        "https://mfa41625-mo.github.io/dua-for-kamal/"
 
-    if(data.length){
-
-      document.getElementById("visitors").textContent =
-        data[0].visitors;
-
-    }
-
-  }catch(error){
-
-    console.log(error);
-
-  }
-
-}
+    };
 
 
-/* =========================
-   تشغيل الموقع
-========================= */
+    try{
 
-loadCount();
-countVisitor();
+      if(navigator.share){
 
+        await navigator.share(shareData);
 
-/* =========================
-   تشغيل الموقع كتطبيق
-========================= */
+      }else{
 
-if("serviceWorker" in navigator){
-
-  window.addEventListener("load",function(){
-
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(function(){
-        console.log("Service Worker registered");
-      })
-      .catch(function(error){
-        console.log(
-          "Service Worker error:",
-          error
+        await navigator.clipboard.writeText(
+          "https://mfa41625-mo.github.io/dua-for-kamal/"
         );
-      });
+
+        document.getElementById("status").textContent =
+          "تم نسخ رابط الموقع، شاركه مع من تحب 🤲";
+
+      }
+
+    }catch(e){}
 
   });
 
-}
+
+/* تشغيل العدادات */
+
+loadCount();
+
+registerVisitor();
 
 </script>
 
